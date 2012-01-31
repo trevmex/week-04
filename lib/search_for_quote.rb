@@ -10,5 +10,9 @@
 
 def search_for_quote(options)
   quotes = all_quotes(options.delete(:file))
-  
+  quotes = quotes.find_all {|quote| quote.include? options[:include]} if options[:include]
+  quotes = quotes.find_all {|quote| quote.start_with? options[:start_with]} if options[:start_with]
+  quotes = quotes.find_all {|quote| quote.end_with? options[:end_with]} if options[:end_with]
+
+  quotes
 end
