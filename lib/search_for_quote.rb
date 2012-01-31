@@ -7,3 +7,8 @@
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
 #
+
+def search_for_quote(options)
+  quotes = all_quotes(options.delete(:file))
+  
+end

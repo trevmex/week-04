@@ -6,4 +6,12 @@
 # 
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
-#
+
+def find_quote(file, line=0)
+  quotes = all_quotes(file)
+  if quotes.empty?
+    "Could not find a quote at this time"
+  else
+	quotes[line] || quotes[0]
+  end
+end
